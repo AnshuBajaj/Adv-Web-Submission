@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Bakery</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    
+    
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo {
+  max-height: 42px;
+  margin-right: 10px;
+  margin-top: -3px;
+  display: inline-block;
+}
+
+#promo {
+  text-align: center;
+  padding: 60px;
+  background: url(../../assets/img/background.jpg) no-repeat;
+  background-size: cover;
+  margin-top: 65px;
+}
+
+@media (max-width:991px) {
+  #promo {
+    padding: 20px;
+  }
+}
+
+#promo .jumbotron {
+  border-radius: 20px;
+  padding: 40px;
+  background-color: rgba(255,255,255,0.75);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width:991px) {
+  #promo .jumbotron {
+    padding: 20px;
+  }
+}
+
+.dark-section {
+  background-color: #eff7fb;
+}
+
+.site-section {
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.site-section h1 {
+  font-weight: normal;
+  margin-bottom: 50px;
+  margin-top: 60px;
+}
+
+#welcome p {
+  max-width: 800px;
+  font-size: 20px;
+  margin: 0 auto;
+  color: #666;
+}
+
+@media (max-width:991px) {
+  #why .item {
+    padding-bottom: 36px;
+  }
+}
+
+@media (max-width:991px) {
+  #why {
+    padding-bottom: 14px;
+  }
+}
+
+#why .item i {
+  font-size: 42px;
+  color: rgb(239,79,145);
+}
+
+#why .item h2 {
+  font-weight: normal;
+  margin-top: 13px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+#why .item p {
+  color: #6f767a;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: rgb(245,245,130);
+  border-color: transparent;
+}
+   
+    #gallery{
+            margin-top: 80px;
+                                  
+        }
+        
+         *{
+            margin:0;
+            padding:0;
+        }
+         td {
+            height: 50px;
+             width:50px;
+        }
+        .b{
+            width:50px;
+            height:50px;
+                font-size:25;
+        margin:2px;
+        }
+        .v{
+            width:104px;
+            height:50px;
+                font-size:25;
+        margin:2px;
+        }
+        .inp{
+            border-radius: 10px;
+            width:210px;
+            margin: 3px;
+            font-size: 25px;
+            padding:8px;
+        }
+        .bg{
+            background: linear-gradient(to right,#2ec7b9,#007bffb8);
+        }
+      
+    </style>
+</head>
+<body class="bg">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header"><a class="navbar-brand" href="index.html"><img id="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSBevSyIDvhWcc_efr3BsTTqbb6nHZy7OZOnYNkD9UVzRbOE_L3&amp;usqp=CAU"><strong>Bamboozled</strong></a><button data-toggle="collapse" class="navbar-toggle collapsed"
+                    data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="btictactoe.html">Tic Tac Toe</a></li>
+                    <li class="active" role="presentation"><a href="#">Calculator</a></li>
+                    
+                   <li role="presentation"><a href="bpsi.html">PSI</a></li>
+                    <li role="presentation"><a href="btdl.html">To Do List</a></li>
+                    <li role="presentation"><a href="btc.html">Tip Calc</a></li>
+                    <li role="presentation"><a href="bsg.html">Snake Game</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="margin-top:15%; margin-left:43%;">
+
+
+<table style="background-color:darkslategray;  border-radius: 8px;" >
+    <tr><td colspan="4">
+        <input autofocus type="text" class="inp" name="l" id="l" pattern="[0-9]" onkeypress="return isNumberKey(event)" onkeyup="f5()" onblur="f2()"></td></tr>
+    <tr><td colspan="2"><input type="button" class="v btn btn-info" id="ac" value="AC" name="ac" onclick="clears()"></td>
+        <td><input type="button" class="b btn btn-info" id="del" value="del" name="del" ></td>
+        <td><input type="button" class="b btn btn-primary"id="divide" value="/" name="divide" onclick="f('/'); f5()"></td>
+    </tr>    <tr><td><input type="button" class="b btn btn-info" id="7" value="7" name="7" onclick="f(7); f5()"></td>
+        <td><input type="button" class="b btn btn-info" id="8" value="8" name="8" onclick="f(8); f5()"></td>
+    
+<td><input type="button" class="b btn btn-info" id="9" value="9" name="9" onclick="f(9)"  ></td>
+    
+     <td><input type="button" class="b btn btn-primary" id="mult" value="*" name="mult" onclick="f('*'); f5()"></td>
+</tr>
+    <tr><td><input type="button" class="b btn btn-info" id="4" value="4" name="4" onclick="f(4); f5()"></td>
+    <td><input type="button" class="b btn btn-info" id="5" value="5" name="5" onclick="f(5); f5()"></td>
+    <td><input type="button" class="b btn btn-info" id="6" value="6" name="6" onclick="f(6); f5()"></td>
+     <td><input type="button" class="b btn btn-primary" id="sub" value="-" name="sub" onclick="f('-'); f5()"></td>
+</tr>
+
+    <tr><td><input type="button" class="b btn btn-info" id="1" value="1" name="1" onclick="f(1); f5()"></td>
+    <td><input type="button" class="b btn btn-info" id="2" value="2" name="2" onclick="f(2); f5()"></td>
+    <td><input type="button" class="b btn btn-info" id="3" value="3" name="3" onclick="f(3); f5()"></td>
+        <td><input type="button" class="b btn btn-primary" id="add" value="+" name="add" onclick="f('+'); f5()">
+</tr>
+
+    
+      <tr> <td><input type="button" class="b btn btn-info" id="0" value="0" name="0" onclick="f(0); f5()"></td>
+          <td><input type="button" class="b btn btn-info" id="d" value="." name="." onclick="f('.')"></td>
+   
+    <td colspan="2"><input type="button" class="v btn btn-warning" id="e" value="=" name="e" onclick="f1()" ></td>
+        </tr>
+    </table>
+
+</div>
+<script>
+    var ch;
+    function f5(){
+        var str = document.getElementById("l").value;
+        var len = str.length;
+        var s;
+///////////////////////
+if(ch==true){
+           // alert("dscd");
+if(str.charAt(str.length-1)=='+' ||str.charAt(str.length-1)=='*' || str.charAt(str.length-1)=='/' || str.charAt(str.length-1)=='-'){
+  //  alert("dscd");
+      ch= false;
+    }
+else {        //alert("dscd");  
+s=str.charAt(str.length-1);
+document.getElementById("l").value="";
+  if(s==0){}
+  else{
+    
+  document.getElementById("l").value+=s;
+            ch=false;
+        } } }
+//code to clear screen after result when input is given using keyboard
+
+        ///////////////////
+       // alert(len);
+        if(str.charAt(str.length-1)=='+' || str.charAt(str.length-1)=='-' || str.charAt(str.length-1)=='/' || str.charAt(str.length-1)=='*')
+            if(
+          str.charAt(str.length-2)=='+' || str.charAt(str.length-2)=='-' || str.charAt(str.length-2)=='/' || str.charAt(str.length-2)=='*'){
+            var t = str.charAt(str.length-1);
+                document.getElementById("l").value=str.slice(0,-2);
+                document.getElementById("l").value+=t;
+        }
+        
+        if(str.charAt(str.length-1) =='.' && str.charAt(str.length-2)=='.'){
+            
+                document.getElementById("l").value=str.slice(0,-1);
+                //alert(str.slice(0,-1));
+                
+        }
+        //alert(str);
+        // ZERO OCTAL ERROR
+        // also added f5() call in onclick of numerics 
+        if(str.charAt(str.length-3) =='+' ||str.charAt(str.length-3) =='-' ||str.charAt(str.length-3) =='*' ||str.charAt(str.length-3) =='/')
+            if(str.charAt(str.length-2)=='0'){
+            t = str.charAt(str.length-1);
+                document.getElementById("l").value=str.slice(0,-2);
+            document.getElementById("l").value+=t;
+                //alert(str.slice(0,-1));
+                
+        }
+        if(str.charAt(0) == '*' ||str.charAt(0) == '/' ){
+            document.getElementById("l").value="Syntax Error";
+        }
+        if(str.charAt(0) == '.' ){
+            if(str.charAt(1) == '/' || str.charAt(1) == '*' || str.charAt(1) == '-' || str.charAt(1) == '+'  )
+            document.getElementById("l").value="Syntax Error";
+        }
+         if(str.length>=3){
+             if(str.charAt(0) == '0' && str.charAt(1) != '.'){
+                 alert("Error: Number staring with 0 is Octal")
+             document.getElementById("l").value="";
+         }}
+        
+        
+    }
+    //ZERO OCTAL ERROR
+    function f2(){
+         setInterval(function(){ var q = document.getElementById("l").autofocus;}, 1000);
+    }
+function f(x){
+      /*var str = document.getElementById("l").value;
+ var res = str.charAt(str.length-1); 
+          if(res==42 || res==43 || res==45 || res==46 || res==47){
+              if(charCode==42 || charCode==43 || charCode==45 || charCode==46 || charCode==47 ){
+                  alert("two symbols in a row");
+              }
+          }*/
+   // var q = document.getElementById("l").autofocus;
+   var c =true;
+    if(x.keyCode===13){
+        
+        f1();
+      
+       // c=false;
+
+    }
+    else{
+        if(ch==true){
+            //alert("dscd");
+if(x=='+' ||x=='*' || x=='/' || x=='-'){
+         ch= false;
+    }
+else {            document.getElementById("l").value="";    
+            ch=false;
+        } }
+    document.getElementById("l").value+=x;
+     document.getElementById("l").focus();
+} }
+    function f1(){
+        var str = document.getElementById("l").value;
+  var n = str.endsWith("+"); 
+        if(n==true){
+ document.getElementById("l").value="Syntax Error";
+  }
+         var n = str.endsWith("-"); 
+        if(n==true){
+ document.getElementById("l").value="Syntax Error";
+  }
+         var n = str.endsWith("/"); 
+        if(n==true){
+ document.getElementById("l").value="Syntax Error";
+  }
+         var n = str.endsWith("*"); 
+        if(n==true){
+ document.getElementById("l").value="Syntax Error";
+  }
+  
+        
+  
+        let a = document.getElementById("l").value;
+        let y = eval(a);
+       
+        var n = y.toFixed(2);
+        document.getElementById("l").value=n;
+        ch=true;
+       
+        
+    }
+    
+    
+   
+  function isNumberKey(evt)
+      {
+         var charCode = (evt.which) ? evt.which : event.keyCode
+         
+if(charCode >= 48 && charCode<= 57 || charCode==42 || charCode==43 || charCode==45 || charCode==46 || charCode==47 || charCode==61 || charCode==13 || charCode==8 )  
+    /////////////////////
+   
+    
+    /////////////////
+return true; 
+
+          else return false;
+      }
+    
+    function clears()
+    {
+   document.getElementById("l").value="";
+    }
+    
+    
+  
+    
+</script>
+<script>
+    
+  $(function() {
+  $(document).on("keypress", function() {
+    $("#l").focus();
+  });
+        $("#l").keyup(function(event) { 
+            if (event.keyCode === 13) { 
+                $("#e").click(); 
+            } 
+        });
+      $("#del").click(function(){
+          var str = $("#l").val();
+$("#l").val(str.substring(0, str.length - 1));
+      });
+ 
+  });</script> 
+</body></html>
